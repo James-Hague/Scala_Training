@@ -138,21 +138,21 @@ def conditionalsCase (con1: Int,con2: Int,boolean: Boolean):Unit = {
 }
 println(conditionalsCase(0,0,boolean = false))
 
-/*def conditionalsSwap (int1: Int,int2: Int) = {
+
+
+def conditionalsSwap (int1: Int,int2: Int) = {
 
   val list1 = List(int1,int2)
 
   (int1,int2,list1) match {
-    case case1 if case1._3 == (int1,int2) => println {
-      list1.reverse
-    }
+    case case1 if case1._3 == (int1,int2) => println(list1)
     case case2 if case2._1 == 0 => print(list1, "invalid")
     case case3 if case3._2 == 0 => print(list1, "invalid")
 
   }
-}*/
-//println("CONDIT SWAP TEST")
-//intln(conditionalsSwap(1,2))
+}
+println("CONDIT SWAP TEST")
+println(conditionalsSwap(1,2))
 
  def hansPeter (cardNumber: Long):Unit = {
 
@@ -165,11 +165,11 @@ println(conditionalsCase(0,0,boolean = false))
    // list of digits
    //x.toString.reverse.map(_.asDigit).toList
   // println(x)
-   x.toString.map(_.asDigit).toArray
+   x.toString.reverse
 
 
 
-   for (i <- 0 to x by 2) {
+   for (i <- 0 to Array(x).length by 2) {
      //Double digit
      val temp = i * 2
      println(temp)
