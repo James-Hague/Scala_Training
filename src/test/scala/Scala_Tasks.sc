@@ -213,29 +213,35 @@ def conditionals1and2Case(con1: Int, con2: Int, boolean: Boolean): Unit = {
 }
 print(conditionals1and2Case(5,7,true))
 
-
-val listTest = List(55,88)
-val array = Array("hello","oops")
+val listTest = List(5,8)
+val array = Array(34,45)
 val tuple = (28,"Bats")
-println(conditionals1and2Case(3, 4, true))
 
-def conditionalsPatternSwap (num1: Any) = {
+def conditionalsPatternSwap (num1: Any):Any = {
   // ACCEPT ANY TYPE AND GRAB FIRS AND LAST ELEMENT THEN SWAP
 
-  val valueA = num1.toString.head
-  val valueB = num1.toString.last
 
-  (valueA,valueB) match {
-    case case1 if case1._1 == valueA => println(valueB,valueA)
-    case  case2 if case2._2 == valueB => println(valueA,valueB)
-
+  (num1)match
+  {
+    case (x, y) => (y, x)
+    case (x :: y ::_) => (y,x)
+    case (Array(x,y)) => Array(y,x)
+    case (x,y) => (null)
   }
 }
-print("SWAP")
 
+print("SWAP")
+println("Numbers")
+println(conditionalsPatternSwap(1,2))
+println("String")
 print(conditionalsPatternSwap("Hello"))
+println("List")
 print(conditionalsPatternSwap(listTest))
+println("Array")
 print(conditionalsPatternSwap(array))
+print("Tuple")
 print(conditionalsPatternSwap(tuple))
+
+
 
 
